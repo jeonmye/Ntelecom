@@ -11,11 +11,11 @@ const Container = styled.div`
 `;
 
 const Main = () => {
-  const { isMobile } = useViewport();
+  const { isMobile, isLoaded } = useViewport();
 
   return (
     <Container $isMobile={isMobile}>
-      <Banner isMobile={isMobile} />
+      <Banner isMobile={isMobile} isLoaded={isLoaded} />
     </Container>
   );
 };

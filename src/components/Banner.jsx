@@ -5,6 +5,7 @@ import bannerCellphoneImg from '../assets/images/banner/bannerCellphoneImg.png';
 import mobileBackgroundImg from '../assets/images/banner/mobileBackgroundImg.png';
 import BANNER_BUTTON_LIST from '../constant/bannerButtonList';
 import { useNavigate } from 'react-router';
+import useViewport from '../hooks/useViewPort';
 
 const Content = styled.div`
   position: relative;
@@ -18,6 +19,8 @@ const Content = styled.div`
 const ImgWrapper = styled.div`
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
 `;
 
 const ButtonWrapper = styled.div`
@@ -50,7 +53,7 @@ const BannerCellphoneImg = styled.img`
   z-index: 1;
 `;
 
-const MobildBackgroundImg = styled.img`
+const MobileBackgroundImg = styled.img`
   width: 100%;
   height: auto;
 `;
@@ -60,34 +63,39 @@ const ImgButton = styled.img`
   width: 100%;
   flex: 1;
 `;
-const Banner = ({ isMobile }) => {
+const Banner = ({ isMobile, isLoaded }) => {
   const navigate = useNavigate();
+
   return (
-    <Content $isMobile={isMobile}>
-      {!isMobile && (
-        <ImgWrapper $isMobile={isMobile}>
-          <Title src={bannerTitleImg} alt={'title'} $isMobile={isMobile} />
-          <BannerCellphoneImg src={bannerCellphoneImg} $isMobile={isMobile} />
-        </ImgWrapper>
-      )}
-      {!!isMobile && (
-        <ImgWrapper $isMobile={isMobile}>
-          <MobildBackgroundImg src={mobileBackgroundImg} $isMobile={isMobile} />
-        </ImgWrapper>
-      )}
-      <ButtonWrapper $isMobile={isMobile}>
-        {BANNER_BUTTON_LIST?.map(item => (
-          <a key={item.src} href={item.href ? item.href : null}>
-            <ImgButton
-              key={item.href}
-              src={item.src}
-              alt={item.alt}
-              onClick={item.handleOnClick ? item.handleOnClick : () => navigate(item.path)}
-            />
-          </a>
-        ))}
-      </ButtonWrapper>
-    </Content>
+    isLoaded && (
+      <Content $isMobile={isMobile}>
+        {!isMobile && (
+          <ImgWrapper $isMobile={isMobile}>
+            <Title src={bannerTitleImg} alt={'title'} $isMobile={isMobile} />
+            <BannerCellphoneImg src={bannerCellphoneImg} $isMobile={isMobile} />
+          </ImgWrapper>
+        )}
+
+        {isMobile && (
+          <ImgWrapper $isMobile={isMobile}>
+            <MobileBackgroundImg src={mobileBackgroundImg} $isMobile={isMobile} />
+          </ImgWrapper>
+        )}
+
+        <ButtonWrapper $isMobile={isMobile}>
+          {BANNER_BUTTON_LIST?.map(item => (
+            <a key={item.src} href={item.href ? item.href : null}>
+              <ImgButton
+                key={item.href}
+                src={item.src}
+                alt={item.alt}
+                onClick={item.handleOnClick ? item.handleOnClick : () => navigate(item.path)}
+              />
+            </a>
+          ))}
+        </ButtonWrapper>
+      </Content>
+    )
   );
 };
 

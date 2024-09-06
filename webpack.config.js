@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require('webpack');
 const dotenv = require('dotenv');
 dotenv.config();
@@ -71,6 +72,10 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(process.env),
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      generateStatsFile: true,
     }),
   ],
 };

@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
-
+import LoadingSpinner from '../components/LoadingSpinner';
 const Layout = lazy(() => import('../components/Layout'));
 const KTpaymentsystem = lazy(() => import('../pages/KTpaymentsystem'));
 const LGpaymentsystem = lazy(() => import('../pages/LGpaymentsystem'));
@@ -15,7 +14,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: (
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<LoadingSpinner />}>
         <Layout />
       </Suspense>
     ),
@@ -24,7 +23,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<LoadingSpinner />}>
             <Main />
           </Suspense>
         ),
@@ -32,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: 'KTpaymentsystem',
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<LoadingSpinner />}>
             <KTpaymentsystem />
           </Suspense>
         ),
@@ -40,7 +39,7 @@ const router = createBrowserRouter([
       {
         path: 'LGpaymentsystem',
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<LoadingSpinner />}>
             <LGpaymentsystem />
           </Suspense>
         ),
@@ -48,7 +47,7 @@ const router = createBrowserRouter([
       {
         path: 'activation-method',
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<LoadingSpinner />}>
             <ActivationMethods />
           </Suspense>
         ),
@@ -56,7 +55,7 @@ const router = createBrowserRouter([
       {
         path: 'activation-method/KT',
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<LoadingSpinner />}>
             <KTactivationMethod />
           </Suspense>
         ),
@@ -64,7 +63,7 @@ const router = createBrowserRouter([
       {
         path: 'activation-method/LG',
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<LoadingSpinner />}>
             <LGactivationMethod />
           </Suspense>
         ),
@@ -72,7 +71,7 @@ const router = createBrowserRouter([
       {
         path: 'chat',
         element: (
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<LoadingSpinner />}>
             <Chat />
           </Suspense>
         ),
