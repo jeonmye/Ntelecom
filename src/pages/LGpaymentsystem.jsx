@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import useViewport from '../hooks/useViewPort';
 import ExampleImage from '../assets/images/exampleImage.png';
+import slice from './slice';
 
 const Container = styled.div`
   width: 100%;
@@ -32,6 +33,7 @@ const ExampleImg = styled.img`
 
 const LGpaymentsystem = () => {
   const { isMobile } = useViewport();
+  slice();
   return (
     <Container>
       <Title $isMobile={isMobile}>L망 선불요금제</Title>

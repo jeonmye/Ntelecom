@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require('webpack');
 const dotenv = require('dotenv');
@@ -39,24 +38,12 @@ module.exports = {
         test: /\.(jpg|jpeg|gif|png|svg|eot|woff|ttf)$/i,
         type: 'asset/resource',
       },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '',
-            },
-          },
-          'css-loader',
-        ],
-      },
     ],
   },
   output: {
     publicPath: '/',
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     clean: true,
     assetModuleFilename: 'asset/[hash][ext][query]',
   },
@@ -69,7 +56,6 @@ module.exports = {
     new CopyPlugin({
       patterns: [{ from: 'src/assets', to: 'assets' }],
     }),
-    new MiniCssExtractPlugin(),
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(process.env),
     }),
@@ -78,4 +64,11 @@ module.exports = {
       generateStatsFile: true,
     }),
   ],
+
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      minSize: 100,
+    },
+  },
 };
