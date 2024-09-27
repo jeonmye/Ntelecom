@@ -34,7 +34,11 @@ const Layout = () => {
         <Outlet />
       </Content>
       {pathname !== '/' ? (
-        <KakaoChatImg src={kakaoChannelChatBtnImg} alt="상담톡" onClick={() => kakaoChatStart()} />
+        <KakaoChatImg
+          src={kakaoChannelChatBtnImg}
+          alt="상담톡"
+          onClick={() => window.open('https://pf.kakao.com/_XpAvK')}
+        />
       ) : null}
       <Footer />
     </LayoutWrapper>

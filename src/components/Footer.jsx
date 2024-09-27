@@ -9,6 +9,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 50px;
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -28,17 +29,9 @@ const Footer = () => {
       <Wrapper>
         <span>앤텔레콤 셀프개통</span>
         <Bar $isMobile={isMobile} />
-        <span>000-00-00000</span>
+        <span>010-4419-4451</span>
         <Bar $isMobile={isMobile} />
-        <span>abcd@naver.com</span>
-      </Wrapper>
-      <Wrapper>
-        <span>서울특별시 OO구 OOO로 111, 3층 000호 (OO동, OO프라자)</span>
-      </Wrapper>
-      <Wrapper>
-        <span>대표 홍길동</span>
-        <Bar $isMobile={isMobile} />
-        <span>010-0000-0000</span>
+        <span>대표 임효진</span>
       </Wrapper>
     </Container>
   );

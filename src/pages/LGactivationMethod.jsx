@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import useViewport from '../hooks/useViewPort';
-import ExampleImage from '../assets/images/exampleImage.png';
+import lg_activation from '../assets/images/content/lg_activation.jpg';
 import { LG_APP_STORE_LINK_LIST } from '../constant/appStoreLinktList';
 
 const Container = styled.div`
@@ -21,7 +21,7 @@ const Title = styled.p`
   margin-bottom: 30px;
 `;
 
-const ExampleImg = styled.img`
+const LgActivation = styled.img`
   width: 100%;
   height: auto;
 `;
@@ -60,9 +60,7 @@ const LGactivationMethod = () => {
 
       <Title $isMobile={isMobile}>앤텔레콤 멤버십 K망 접수방법</Title>
       <Content>
-        <ExampleImg src={ExampleImage} alt="샘플"></ExampleImg>
-        <ExampleImg src={ExampleImage} alt="샘플"></ExampleImg>
-        <ExampleImg src={ExampleImage} alt="샘플"></ExampleImg>
+        <LgActivation src={lg_activation} alt="샘플"></LgActivation>
       </Content>
     </Container>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import useViewport from '../hooks/useViewPort';
-import ExampleImage from '../assets/images/exampleImage.png';
+import kt_activation from '../assets/images/content/kt_activation.jpg';
 import { KT_APP_STORE_LINK_LIST } from '../constant/appStoreLinktList';
 
 const Container = styled.div`
@@ -21,7 +21,7 @@ const Title = styled.p`
   margin-bottom: 30px;
 `;
 
-const ExampleImg = styled.img`
+const KtActivation = styled.img`
   width: 100%;
   height: auto;
 `;
@@ -60,9 +60,7 @@ const KTactivationMethod = () => {
 
       <Title $isMobile={isMobile}>앤텔레콤 멤버십 K망 접수방법</Title>
       <Content>
-        <ExampleImg src={ExampleImage} alt="샘플"></ExampleImg>
-        <ExampleImg src={ExampleImage} alt="샘플"></ExampleImg>
-        <ExampleImg src={ExampleImage} alt="샘플"></ExampleImg>
+        <KtActivation src={kt_activation} alt="샘플"></KtActivation>
       </Content>
     </Container>
   );

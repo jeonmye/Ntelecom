@@ -1,49 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
 import useViewport from '../hooks/useViewPort';
-import ExampleImage from '../assets/images/exampleImage.png';
-import slice from './slice';
+import lg_phone_plan from '../assets/images/content/lg_phone_plan.jpg';
+import lg_phone_contract_plan from '../assets/images/content/lg_phone_contract_plan.jpg';
 
 const Container = styled.div`
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: ${props => (props.$isMobile ? 'column' : 'row')};
 `;
 
 const Content = styled.div`
   width: 100%;
-  height: 100%;
   margin-bottom: 30px;
 `;
 
-const Title = styled.p`
-  font-size: ${props => (props.$isMobile ? 24 : 32)}px;
-  font-weight: 600;
-  margin-bottom: 30px;
-`;
-const SubTitle = styled.p`
-  font-size: ${props => (props.$isMobile ? 18 : 28)}px;
-  font-weight: 500;
-  margin-bottom: 15px;
-`;
-
-const ExampleImg = styled.img`
+const Img = styled.img`
   width: 100%;
   height: auto;
+  object-fit: contain;
 `;
 
 const LGpaymentsystem = () => {
   const { isMobile } = useViewport();
-  slice();
   return (
-    <Container>
-      <Title $isMobile={isMobile}>L망 선불요금제</Title>
+    <Container $isMobile={isMobile}>
       <Content>
-        <SubTitle $isMobile={isMobile}>추천 요금제</SubTitle>
-        <ExampleImg src={ExampleImage} alt="샘플"></ExampleImg>
+        <Img src={lg_phone_plan} alt="lg망 요금제"></Img>
       </Content>
       <Content>
-        <SubTitle $isMobile={isMobile}>선불 LTE 요금제</SubTitle>
-        <ExampleImg src={ExampleImage} alt="샘플" />
+        <Img src={lg_phone_contract_plan} alt="lg망 약정플랜"></Img>
       </Content>
     </Container>
   );

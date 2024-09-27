@@ -37,10 +37,10 @@ const Chat = () => {
 
   return (
     <Container $isMobile={isMobile}>
-      <Content $isMobile={isMobile} onClick={() => kakaoChatStart()}>
+      <Content $isMobile={isMobile} onClick={() => window.open('https://pf.kakao.com/_XpAvK')}>
         <KakaoImg $isMobile={isMobile} src={kakaoChannelChatImg} alt="카카오톡연결"></KakaoImg>
       </Content>
-      <a href="tel:010-0000-0000">
+      <a href="tel:010-4419-4451">
         <Content $isMobile={isMobile}>
           <CallImg $isMobile={isMobile} src={callImg} alt="전화연결"></CallImg>
         </Content>
