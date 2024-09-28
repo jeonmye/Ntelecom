@@ -1,5 +1,6 @@
-import ReactDOM from 'react-dom/client';
 import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { HelmetProvider } from 'react-helmet-async';
 import { RouterProvider } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { theme, mixins } from './style/theme';
@@ -12,7 +13,9 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={{ ...theme, ...mixins }}>
       <GlobalStyle />
-      <RouterProvider router={router} fallbackElement={<div>Loading...</div>} />
+      <HelmetProvider>
+        <RouterProvider router={router} fallbackElement={<div>Loading...</div>} />
+      </HelmetProvider>
     </ThemeProvider>
   </React.StrictMode>,
 );
