@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import useViewport from '../hooks/useViewPort';
 import lg_activation from '../assets/images/content/lg_activation.jpg';
 import { LG_APP_STORE_LINK_LIST } from '../constant/appStoreLinktList';
+import { LGactivationMethodPageMetas } from '../metadatas/metadats';
 
 const Container = styled.div`
   width: 100%;
@@ -49,20 +50,23 @@ const LGactivationMethod = () => {
   const { isMobile } = useViewport();
 
   return (
-    <Container $isMobile={isMobile}>
-      <ButtonWrapper $isMobile={isMobile}>
-        {LG_APP_STORE_LINK_LIST.map(item => (
-          <a href={item.href}>
-            <Button>{item.label}</Button>
-          </a>
-        ))}
-      </ButtonWrapper>
+    <>
+      <LGactivationMethodPageMetas />
+      <Container $isMobile={isMobile}>
+        <ButtonWrapper $isMobile={isMobile}>
+          {LG_APP_STORE_LINK_LIST.map(item => (
+            <a href={item.href}>
+              <Button>{item.label}</Button>
+            </a>
+          ))}
+        </ButtonWrapper>
 
-      <Title $isMobile={isMobile}>앤텔레콤 멤버십 K망 접수방법</Title>
-      <Content>
-        <LgActivation src={lg_activation} alt="샘플"></LgActivation>
-      </Content>
-    </Container>
+        <Title $isMobile={isMobile}>앤텔레콤 멤버십 K망 접수방법</Title>
+        <Content>
+          <LgActivation src={lg_activation} alt="샘플"></LgActivation>
+        </Content>
+      </Container>
+    </>
   );
 };
 

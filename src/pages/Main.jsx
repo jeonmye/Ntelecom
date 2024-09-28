@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import useViewport from '../hooks/useViewPort';
 import Banner from '../components/Banner';
+import { MainPageMetas } from '../metadatas/metadats';
 
 const Container = styled.div`
   display: flex;
@@ -14,9 +15,12 @@ const Main = () => {
   const { isMobile, isLoaded } = useViewport();
 
   return (
-    <Container $isMobile={isMobile}>
-      <Banner isMobile={isMobile} isLoaded={isLoaded} />
-    </Container>
+    <>
+      <MainPageMetas />
+      <Container $isMobile={isMobile}>
+        <Banner isMobile={isMobile} isLoaded={isLoaded} />
+      </Container>
+    </>
   );
 };
 

@@ -49,16 +49,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/assets/images/logo/logo.png":
-/*!*****************************************!*\
-  !*** ./src/assets/images/logo/logo.png ***!
-  \*****************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"asset/76ed2950e3bccf6bd4ae.png\";\n\n//# sourceURL=webpack://ntelecom-project/./src/assets/images/logo/logo.png?");
-
-/***/ }),
-
 /***/ "./src/assets/images/resource/kakaoChannelChatBtnImg.png":
 /*!***************************************************************!*\
   !*** ./src/assets/images/resource/kakaoChannelChatBtnImg.png ***!

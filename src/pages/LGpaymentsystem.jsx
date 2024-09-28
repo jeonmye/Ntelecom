@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import useViewport from '../hooks/useViewPort';
 import lg_phone_plan from '../assets/images/content/lg_phone_plan.jpg';
 import lg_phone_contract_plan from '../assets/images/content/lg_phone_contract_plan.jpg';
+import { LGpaymentsystemPageMetas } from '../metadatas/metadats';
 
 const Container = styled.div`
   width: 100%;
@@ -25,14 +26,17 @@ const Img = styled.img`
 const LGpaymentsystem = () => {
   const { isMobile } = useViewport();
   return (
-    <Container $isMobile={isMobile}>
-      <Content>
-        <Img src={lg_phone_plan} alt="lg망 요금제"></Img>
-      </Content>
-      <Content>
-        <Img src={lg_phone_contract_plan} alt="lg망 약정플랜"></Img>
-      </Content>
-    </Container>
+    <>
+      <LGpaymentsystemPageMetas />
+      <Container $isMobile={isMobile}>
+        <Content>
+          <Img src={lg_phone_plan} alt="lg망 요금제"></Img>
+        </Content>
+        <Content>
+          <Img src={lg_phone_contract_plan} alt="lg망 약정플랜"></Img>
+        </Content>
+      </Container>
+    </>
   );
 };
 export default LGpaymentsystem;

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import useViewport from '../hooks/useViewPort';
 import ktMembershipImg from '../assets/images/resource/ktMembershipImg.png';
 import lgMembershipImg from '../assets/images/resource/lgMembershipImg.png';
+import { ActivationMethodsPageMetas } from '../metadatas/metadats';
 
 const Container = styled.div`
   width: 100%;
@@ -38,16 +39,19 @@ const ActivationMethods = () => {
   const { isMobile } = useViewport();
   const navigate = useNavigate();
   return (
-    <Container $isMobile={isMobile}>
-      <Content $isMobile={isMobile} onClick={() => navigate('/activation-method/KT')}>
-        <SubTitle $isMobile={isMobile}>앤텔레콤 멤버십 K망 개통방법</SubTitle>
-        <MembershipImg src={ktMembershipImg} alt="샘플" $isMobile={isMobile}></MembershipImg>
-      </Content>
-      <Content $isMobile={isMobile} onClick={() => navigate('/activation-method/LG')}>
-        <SubTitle $isMobile={isMobile}>앤텔레콤 멤버십 L망 개통방법</SubTitle>
-        <MembershipImg src={lgMembershipImg} alt="샘플" $isMobile={isMobile} />
-      </Content>
-    </Container>
+    <>
+      <ActivationMethodsPageMetas />
+      <Container $isMobile={isMobile}>
+        <Content $isMobile={isMobile} onClick={() => navigate('/activation-method/KT')}>
+          <SubTitle $isMobile={isMobile}>앤텔레콤 멤버십 K망 개통방법</SubTitle>
+          <MembershipImg src={ktMembershipImg} alt="샘플" $isMobile={isMobile}></MembershipImg>
+        </Content>
+        <Content $isMobile={isMobile} onClick={() => navigate('/activation-method/LG')}>
+          <SubTitle $isMobile={isMobile}>앤텔레콤 멤버십 L망 개통방법</SubTitle>
+          <MembershipImg src={lgMembershipImg} alt="샘플" $isMobile={isMobile} />
+        </Content>
+      </Container>
+    </>
   );
 };
 export default ActivationMethods;

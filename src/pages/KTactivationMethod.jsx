@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import useViewport from '../hooks/useViewPort';
 import kt_activation from '../assets/images/content/kt_activation.jpg';
 import { KT_APP_STORE_LINK_LIST } from '../constant/appStoreLinktList';
+import { KTactivationMethodPageMetas } from '../metadatas/metadats';
 
 const Container = styled.div`
   width: 100%;
@@ -49,20 +50,23 @@ const KTactivationMethod = () => {
   const { isMobile } = useViewport();
 
   return (
-    <Container $isMobile={isMobile}>
-      <ButtonWrapper $isMobile={isMobile}>
-        {KT_APP_STORE_LINK_LIST.map(item => (
-          <a href={item.href}>
-            <Button>{item.label}</Button>
-          </a>
-        ))}
-      </ButtonWrapper>
+    <>
+      <KTactivationMethodPageMetas />
+      <Container $isMobile={isMobile}>
+        <ButtonWrapper $isMobile={isMobile}>
+          {KT_APP_STORE_LINK_LIST.map(item => (
+            <a href={item.href}>
+              <Button>{item.label}</Button>
+            </a>
+          ))}
+        </ButtonWrapper>
 
-      <Title $isMobile={isMobile}>앤텔레콤 멤버십 K망 접수방법</Title>
-      <Content>
-        <KtActivation src={kt_activation} alt="샘플"></KtActivation>
-      </Content>
-    </Container>
+        <Title $isMobile={isMobile}>앤텔레콤 멤버십 K망 접수방법</Title>
+        <Content>
+          <KtActivation src={kt_activation} alt="샘플"></KtActivation>
+        </Content>
+      </Container>
+    </>
   );
 };
 export default KTactivationMethod;

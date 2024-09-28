@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import useViewport from '../hooks/useViewPort';
 import callImg from '../assets/images/resource/callImg.png';
 import kakaoChannelChatImg from '../assets/images/resource/kakaoChannelChatImg.png';
+import { ChatPageMetas } from '../metadatas/metadats';
 
 const Container = styled.div`
   width: 100%;
@@ -36,16 +37,19 @@ const Chat = () => {
   const { isMobile } = useViewport();
 
   return (
-    <Container $isMobile={isMobile}>
-      <Content $isMobile={isMobile} onClick={() => window.open('https://pf.kakao.com/_XpAvK')}>
-        <KakaoImg $isMobile={isMobile} src={kakaoChannelChatImg} alt="카카오톡연결"></KakaoImg>
-      </Content>
-      <a href="tel:010-4419-4451">
-        <Content $isMobile={isMobile}>
-          <CallImg $isMobile={isMobile} src={callImg} alt="전화연결"></CallImg>
+    <>
+      <ChatPageMetas />
+      <Container $isMobile={isMobile}>
+        <Content $isMobile={isMobile} onClick={() => window.open('https://pf.kakao.com/_XpAvK')}>
+          <KakaoImg $isMobile={isMobile} src={kakaoChannelChatImg} alt="카카오톡연결"></KakaoImg>
         </Content>
-      </a>
-    </Container>
+        <a href="tel:010-4419-4451">
+          <Content $isMobile={isMobile}>
+            <CallImg $isMobile={isMobile} src={callImg} alt="전화연결"></CallImg>
+          </Content>
+        </a>
+      </Container>
+    </>
   );
 };
 export default Chat;

@@ -17,8 +17,10 @@
     "styled-reset": "^4.5.2"
   },
   "scripts": {
+    "clean": "rimraf dist",
     "build": "webpack build --config ./webpack.config.js",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "postbuild": "react-snap"
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",
@@ -34,6 +36,7 @@
     "html-webpack-plugin": "^5.6.0",
     "prettier": "^3.3.2",
     "react-helmet-async": "^2.0.5",
+    "react-snap": "^1.23.0",
     "style-loader": "^4.0.0",
     "terser-webpack-plugin": "^5.3.10",
     "webpack": "^5.92.1",
@@ -43,5 +46,17 @@
   },
   "alias": {
     "@mui/styled-engine": "@mui/styled-engine-sc"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "include": [
+      "/",
+      "/KTpaymentsystem",
+      "/LGpaymentsystem",
+      "/activation-method",
+      "/activation-method/KT",
+      "/activation-method/LG",
+      "/chat"
+    ]
   }
 }

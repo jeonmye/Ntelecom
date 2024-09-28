@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import useViewport from '../hooks/useViewPort';
 import kt_phone_plan from '../assets/images/content/kt_phone_plan.jpg';
 import kt_phone_contract_plan from '../assets/images/content/kt_phone_contract_plan.jpg';
+import { KTpaymentsystemPageMetas } from '../metadatas/metadats';
 
 const Container = styled.div`
   width: 100%;
@@ -25,14 +26,17 @@ const Img = styled.img`
 const KTpaymentsystem = () => {
   const { isMobile } = useViewport();
   return (
-    <Container $isMobile={isMobile}>
-      <Content>
-        <Img src={kt_phone_plan} alt="kt망 요금제"></Img>
-      </Content>
-      <Content>
-        <Img src={kt_phone_contract_plan} alt="kt망 약정플랜"></Img>
-      </Content>
-    </Container>
+    <>
+      <KTpaymentsystemPageMetas />
+      <Container $isMobile={isMobile}>
+        <Content>
+          <Img src={kt_phone_plan} alt="kt망 요금제"></Img>
+        </Content>
+        <Content>
+          <Img src={kt_phone_contract_plan} alt="kt망 약정플랜"></Img>
+        </Content>
+      </Container>
+    </>
   );
 };
 export default KTpaymentsystem;
