@@ -85,7 +85,7 @@ eval("module.exports = __webpack_require__.p + \"asset/fb084ba805e8a5e41443.png\
   \*************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"asset/5c05abb71aa066c5223e.png\";\n\n//# sourceURL=webpack://ntelecom-project/./src/assets/images/button/callBtnImg.png?");
+eval("module.exports = __webpack_require__.p + \"asset/9bd095f9e9bdde678fff.png\";\n\n//# sourceURL=webpack://ntelecom-project/./src/assets/images/button/callBtnImg.png?");
 
 /***/ }),
 

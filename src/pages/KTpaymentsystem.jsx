@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import useViewport from '../hooks/useViewPort';
 import kt_phone_plan from '../assets/images/content/kt_phone_plan.jpg';
 import kt_phone_contract_plan from '../assets/images/content/kt_phone_contract_plan.jpg';
-im;
+
 const Container = styled.div`
   width: 100%;
   height: 100%;

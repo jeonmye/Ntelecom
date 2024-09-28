@@ -25,7 +25,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"asset/2f09e6cc8f06551464b0.png\";\n\n//# sourceURL=webpack://ntelecom-project/./src/assets/images/resource/callImg.png?");
+eval("module.exports = __webpack_require__.p + \"asset/2d703d17b68b9e603f51.png\";\n\n//# sourceURL=webpack://ntelecom-project/./src/assets/images/resource/callImg.png?");
 
 /***/ }),
 
